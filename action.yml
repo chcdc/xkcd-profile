@@ -1,0 +1,21 @@
+name: 'xkcd webcomics'
+author: 'Carlos Carvalho'
+description: 'Update your README.md profile with a xkcd webcomics'
+
+inputs:
+  README_PATH:
+    description: 'README.md path'
+    required: true
+    default: ./README.md
+
+runs:
+  using: 'composite'
+  steps:
+    - env:
+        README_PATH: ${{ inputs.README_PATH }}
+      run: python ${{ github.action_path }}/main.py
+      shell: bash
+
+branding:
+  icon: book
+  color: green
