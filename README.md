@@ -29,8 +29,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: xkcd-to-markdown
-        uses: chcdc/xkcd-profile@v0.1
-        with:
+        uses: chcdc/xkcd-profile@v1
+#        with:
 #         README_PATH: ./README.md # Optional. Defaults is ./README.md.
       - name: commit changes
         continue-on-error: true
