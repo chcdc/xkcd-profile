@@ -9,7 +9,7 @@ import requests
 
 
 def get_xkcd_data():
-    '''Gets API data and returns json'''
+    """Gets xkcd comic data from the API"""
     try:
         request = requests.get("https://xkcd.com/info.0.json")
     except requests.exceptions.RequestException as error:
@@ -19,7 +19,7 @@ def get_xkcd_data():
 
 
 def update_readme(xkcd_data):
-    '''Generate a new Readme.md'''
+    """Updates the README file with the latest xkcd comic"""
     with open('README.md', 'r', encoding='utf-8') as file:
         readme = file.readlines()
     try:
@@ -52,6 +52,7 @@ if __name__ == '__main__':
         # Update the README file with the latest xkcd comic
         update_readme(xkcd_data)
 
+        # Print a success message and the processing time
         print("Readme updated")
         end_time = datetime.datetime.now().timestamp() * 1000
         print(f"Program processed in"
